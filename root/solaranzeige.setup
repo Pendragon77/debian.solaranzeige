@@ -29,18 +29,14 @@ fi
 
 echo ""
 echo "downloading Main Program..."
-cd /tmp/git && git clone https://github.com/DeBaschdi/solar_config.git
+cd /tmp/git && git clone https://github.com/Pendragon77/solar_config.git
 cp -R /tmp/git/solar_config/html /var/www
 cp -R /tmp/git/solar_config/solaranzeige /
-cp -R /tmp/git/solar_config/influxdb /var/lib
-cp -R /tmp/git/solar_config/grafana /var/lib
+#cp -R /tmp/git/solar_config/grafana /var/lib
 
 chmod -R 777 /solaranzeige
 chmod -R 777 /var/www
-chmod -R 777 /var/lib/influxdb
-chmod -R 777 /var/lib/grafana
 chmod -R 777 /pvforecast
-chmod -R 777 /run/mosquitto
 
 su -s /bin/bash -c "TERM=xterm /usr/local/sbin/solaranzeige.update"
 
@@ -54,10 +50,10 @@ chmod +x /solaranzeige/support
 
 cd /var/www/html && rm -rf /tmp/git
 
-echo ""
-echo "Installing Grafana Plugins..."
-grafana-cli plugins install fetzerch-sunandmoon-datasource
-grafana-cli plugins install briangann-gauge-panel
+#echo ""
+#echo "Installing Grafana Plugins..."
+#grafana-cli plugins install fetzerch-sunandmoon-datasource
+#grafana-cli plugins install briangann-gauge-panel
 
 echo ""
 echo "##############################################################################################"
