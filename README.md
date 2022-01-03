@@ -1,6 +1,10 @@
 # docker.solaranzeige
 <img src="https://raw.githubusercontent.com/DeBaschdi/solar_config/master/solaranzeige/splash.png" height="100" width="150">
 
+### Disclaimer
+
+This image was forked from the user DeBaschdi (https://github.com/DeBaschdi/docker.solaranzeige). I needed a slightly different image, while I didn't want duplicates of grafana and influx in my server. On the other hand I changed some of the scripts e.g. do disallow the reverse ssh.
+
 ### Prerequisites
 You will need to have `docker` installed on your system and the user you want to run it needs to be in the `docker` group.
 
